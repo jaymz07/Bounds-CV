@@ -10,14 +10,16 @@ This repository contains the LaTeX source for my academic curriculum vitae.
 
 Compile with
 
-latexmk -pdf CV.tex
+```latexmk -pdf CV.tex```
 
 or
 
+```
 lualatex CV.tex
 biber CV
 lualatex CV.tex
 lualatex CV.tex
+```
 
 depending on your TeX workflow.
 
