@@ -4,7 +4,7 @@ This repository contains the LaTeX source for my academic curriculum vitae.
 
 ## View the CV
 
-[📄 View CV](James%20Bounds%20CV.pdf)
+[📄 View CV](James%20Bounds%20-%20CV.pdf)
 
 ## Building
 
