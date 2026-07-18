@@ -1,0 +1,411 @@
+% NOTE: The "Default Bibliography Tool" needs to be changed to biber if compiled in TeXstudio
+
+\documentclass[a4paper,9pt]{extarticle}
+
+% Packages
+\usepackage[utf8]{inputenc} % For input encoding
+\usepackage{geometry} % For page margins
+\geometry{a4paper, margin=1in} % Set paper size and margins
+\usepackage{titlesec} % For section title formatting
+\usepackage{enumitem} % For itemized list formatting
+\usepackage{hyperref} % For hyperlinks
+\usepackage{changepage} %For Indenting
+
+\hypersetup{ % Prettier links
+	colorlinks=true,       % True: colored text; False: boxed links
+	linkcolor=red,         % Color of internal links (sections, pages, figures)
+	citecolor=green,       % Color of library citations
+	filecolor=cyan,        % Color of links to local files
+	urlcolor=magenta,      % Color of website URLs
+	allcolors=blue         % Optional: Sets all link types to one uniform color
+}
+
+% Formatting
+%\setlist{noitemsep} % Removes item separation
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}[\titlerule] % Section title format
+\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip} % Section title spacing
+\newenvironment{subs} %Indenting
+{\adjustwidth{2em}{0pt}}
+{\endadjustwidth}
+
+
+\titleformat{\subsection}{\large\bfseries}{}{0em}{}
+%[\titlerule]
+\titlespacing*{\subsection}{0pt}{\baselineskip}{\baselineskip} % Section title spacing
+
+%----------------Bibliography Setup---------
+\usepackage[
+backend=biber,
+style=authoryear,
+sorting=ydnt,      % Year (descending), name, title
+maxbibnames=4,     % Show first 3 authors
+minbibnames=4,
+giveninits=true,   % James -> J.
+doi=true,
+isbn=false,
+url=false,
+eprint=false
+]{biblatex}
+
+\addbibresource{publications.bib}
+
+%----------------Bibliography Customization---------
+% Remove quotation marks
+\DeclareFieldFormat[article,inproceedings]{title}{#1}
+
+% less whitespace
+%\setlength{\bibitemsep}{0.4\baselineskip}
+%\setlength{\bibhang}{1.8em}
+
+% italic journal
+%DeclareFieldFormat{journaltitle}{\mkbibemph{#1}}
+
+% supress "in:"
+%\renewbibmacro{in:}{}
+
+%\ExecuteBibliographyOptions{
+%	maxbibnames=4,
+%	minbibnames=2
+%}
+
+%----------------Bibliography Driver---------
+% Declar bibliography environment
+\defbibenvironment{bibliography}
+{\list
+	{}
+	{
+		\setlength{\leftmargin}{0pt}
+		\setlength{\itemindent}{0pt}
+		\setlength{\labelwidth}{0pt}
+		\setlength{\labelsep}{0pt}
+		\setlength{\itemsep}{0.8em}
+		\setlength{\parsep}{0pt}
+}}
+{\endlist}
+{\item}
+
+\newlength{\yearwidth}
+\setlength{\yearwidth}{3em}
+
+% Article Driver
+\DeclareBibliographyDriver{article}{%
+	\noindent
+	\makebox[\yearwidth][l]{%
+		\textbf{\printfield{year}}%
+	}%
+	\begin{minipage}[t]{\dimexpr\linewidth-\yearwidth\relax}
+		\textbf{\printfield{title}}\adddot\space
+		
+		\printnames{author}\adddot\space
+		
+		\mkbibemph{\printfield{journaltitle}}%
+		\setunit{\space}
+		\textbf{\printfield{volume}}
+		\iffieldundef{number}
+		{}
+		{(\printfield{number})}
+		%
+		\setunit{\addcomma\space}
+		\printfield{pages}
+		
+		\printfield{url}
+		\finentry
+		
+	\end{minipage}
+	
+	\par\vspace{0.5\baselineskip}
+}
+
+% Preprint Driver
+\DeclareBibliographyDriver{misc}{%
+	\noindent
+	\makebox[\yearwidth][l]{%
+		\textbf{\printfield{year}}%
+	}%
+	\begin{minipage}[t]{\dimexpr\linewidth-\yearwidth\relax}
+		\textbf{\printfield{title}}\adddot\space
+		
+		\printnames{author}\adddot\space
+		
+		\mkbibemph{\printfield{journaltitle}}%
+		\setunit{\space}
+		\textbf{\printfield{volume}}
+		\iffieldundef{number}
+		{}
+		{(\printfield{number})}
+		%
+		\setunit{\addcomma\space}
+		\printfield{pages}
+		\finentry
+		
+	\end{minipage}
+	
+	\par\vspace{0.5\baselineskip}
+}
+
+%-----------------Command Definitions------------
+% Define the CV Entry command
+\newcommand{\cventry}[3]{
+	\noindent
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{2.3cm}p{13cm}}
+		\textbf{#1} &
+		\textbf{#2}\\
+		&
+		#3\\[0.8em]
+	\end{tabular*}
+}
+
+\newcommand{\ccventryy}[4]{
+	\noindent
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{2.3cm}p{13cm}}
+		\textbf{#1} &
+		\textbf{#2}\\
+		&
+		#3\\
+		&
+		#4\\[0.8em]
+	\end{tabular*}
+}
+
+\newcommand{\cventryy}[4]{
+	\noindent
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.6cm}p{14.7cm}}
+		\textbf{#1} &
+		\textbf{#2}\\
+		&
+		#3\\
+		&
+		#4\\[0.8em]
+	\end{tabular*}
+}
+
+\newcommand{\cventryyy}[5]{
+	\noindent
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.6cm}p{14.7cm}}
+		\textbf{#1} &
+		\textbf{#2}\\
+		&
+		#3\\
+		&
+		#4\\
+		&
+		#5\\[0.8em]
+	\end{tabular*}
+}
+
+% Define the CV Item command, displays a bullet point
+\newcommand{\cvitem}[1]{
+	\hspace{2.3cm}$\bullet$ #1\\
+}
+
+%-------------------------------------------------------------------------------
+% Begin document
+%-------------------------------------------------------------------------------
+\begin{document}
+	
+	% Disable page numbers
+	\pagestyle{empty}
+	
+	% Header
+	\begin{center}
+		{\LARGE\bfseries James R. Bounds}
+		
+		\vspace{3pt}
+		
+		Curriculum Vitae
+		
+		\vspace{4pt}
+		
+		College Station, Texas \quad$\cdot$\quad
+		\href{mailto:jamesbounds@tamu.edu}{jamesbounds@tamu.edu} % | \href{https://www.linkedin.com/in/loremipsum}{Website or LinkedIn} % Contact info
+	\end{center}
+	
+	%------------------------
+	% Education and Employment Section
+	\section*{EDUCATION \& EMPLOYMENT HISTORY}
+	\ccventryy%y
+	{2015}
+	{B.S. Physics}
+	{Texas A\&M University}
+	{Department of Physics and Astronomy}
+%	{GPA: 3.19}
+	
+	\ccventryy
+	{2012--2015}
+	{Undergraduate Research Assistant}
+	{Texas A\&M University}
+	{Advisor: Prof. Hans Schuessler}
+	
+	\ccventryy
+	{2016}
+	{IT Technician}
+	{Systek Computing}
+	{College Station, Texas}
+	
+	\ccventryy
+	{2016--2025}
+	{Graduate Research Assistant}
+	{Texas A\&M University}
+	{Advisor: Prof. Hans Schuessler}
+	
+	\ccventryy
+	{2025--2026}
+	{Graduate Teaching Assistant}
+	{Texas A\&M University}
+	{Advisor: Prof. Hans Schuessler, Prof. Alexei Sokolov}
+	
+	\section*{RESEARCH EXPERIENCE}
+	\begin{itemize}
+		\item Design and construction of high precision scientific instruments
+		\item Precision laser spectroscopy and cavity-enhanced absorption techniques
+		\item Characterization of breath samples using laser spectroscopy
+		\item High-resolution measurement of molecular absorption cross section
+		\item Retrieval of hyperfine constants from doppler-free spectra
+		\item Demonstration of novel wavelength and optical frequency calibration techniques
+		\item Optical system design and alignment (CRDS, Vernier spectroscopy, interferometry)
+		\item Scientific instrument design (high precision spectrometers and wavemeters, novel measurement platforms)
+		\item Scientific software development (full-stack, numerical optimization, instrument automation, GUI design)
+		\item Electronics and instrumentation (DAQ systems, photodetectors, control electronics)
+		\item Experimental characterization, uncertainty analysis, and validation against molecular databases
+	\end{itemize}
+	
+	%------------------------
+	% Publications Section
+	\section*{PUBLICATIONS}
+	
+	\nocite{*}
+	
+	
+	\subsection*{Peer Reviewed}
+	
+	\printbibliography[heading=none,keyword=journal]
+	
+	\subsection*{Preprint}
+	\printbibliography[heading=none,keyword=preprint]
+	
+	\section*{CONFERENCE PROCEEDINGS}
+	
+	\cventryy
+	{2023}
+	{Hyperfine Structure of Xe by Frequency Comb Calibrated Saturation and Collinear Fast Beam Spectroscopies}
+	{31st Annual International workshop, Laser Physics 2023}
+	{H.Schuessler, J. Bounds, N. Schnoor, A. Kolomenskii, R. Trainham, M. Manard.}
+	
+	\cventryy
+	{2023}
+	{Local and Remote Measurements of Atmospheric Trace Gases}
+	{31st Annual International workshop, Laser Physics 2023}
+	{A. Kolomenskii, C. Rodriguez, J. Bounds, E. Aluauee, H. Schuessler.}
+	
+	\cventryyy
+	{2021}
+	{Broadband Frequency Comb Vernier Spectroscopy In The Mid-IR With Video-recording Retrieval Of Absorption Spectrum}
+	{International Symposium on Molecular Spectroscopy}
+	{H. Schuessler, J. Bounds, A. Kolomenskii}
+	{\href{http://hdl.handle.net/2142/111474}{DOI: 10.15278/isms.2021.FF12}}
+	
+	\cventryyy
+	{2021}
+	{Spectroscopic Detection Of Methane at a ppt Sensitivity Level in Mid-IR with a Long-path Multipass Cell}
+	{International Symposium on Molecular Spectroscopy}
+	{J. Xia, C. Rodriguez, J. Bounds, A. Kolomenskii, H. Schuessler}
+	{\href{http://hdl.handle.net/2142/111469}{DOI: 10.15278/isms.2021.RF10}}
+	
+	\cventryyy
+	{2018}
+	{Frequency comb vernier spectroscopy of methane in the mid-IR with temporal retrieval of comb lines}
+	{International Symposium on Molecular Spectroscopy}
+	{James R Bounds, F. Zhu, A. Kolomenskii, H. Schuessler.}
+	{\href{http://hdl.handle.net/2142/100480}{DOI: 10.15278/isms.2018.WA05}}
+	
+	\cventryyy
+	{2018}
+	{Acetone and methane detection with wavelength modulation spectroscopy in the near- and mid-IR}
+	{International Symposium on Molecular Spectroscopy}
+	{J. Xia, F. Zhu, J. Bounds, A. Kolomenskii, H. Schuessler.}
+	{\href{http://hdl.handle.net/2142/100674}{DOI: 10.15278/isms.2018.RH03}}
+	
+	\section*{POSTER PRESENTATIONS}
+	\cventryy
+	{2025}
+	{Hyperfine structure and isotope shifts of xenon measured for near-infrared transitions with Doppler-free saturated absorption spectroscopy}
+	{SIBOR Workshop}
+	{Cook's Branch Conservancy, Montgomery, Texas}
+	
+	\section*{ORAL PRESENTATIONS}
+	
+	\cventryy
+	{2024}
+	{Frequency Comb Calibration of the Hyperfine Structure of Metastable Xenon}
+	{SIBOR Workshop}
+	{Cook's Branch Conservancy, Montgomery, Texas}
+	
+	\cventryy
+	{2023}
+	{Frequency Comb Calibration of the Hyperfine Structure of Metastable Xenon}
+	{SIBOR Workshop}
+	{Cook's Branch Conservancy, Montgomery, Texas}
+	
+	\cventryy
+	{2022}
+	{Metastable Xenon Hyperfine Structure Measurement}
+	{SIBOR Workshop}
+	{Cook's Branch Conservancy, Montgomery, Texas}
+	
+	\cventryy
+	{2019}
+	{Vernier Spectroscopy and Spectroscopic Detection of Biomarkers in Exhaled Breath}
+	{Workshop of Max Planck Institute of Quantum Optics Laser Spectroscopy Division}
+	{Schloss Ringberg, Kreuth, Germany}
+	
+	\section*{OPEN SOURCE PROJECTS}
+	
+	Github: \url{https://github.com/jaymz07}
+	
+	\begin{itemize}
+		\item \textbf{Battery-Powered, Amplified Photodetector} \newline
+			\null\qquad \url{https://github.com/jaymz07/Photodetector-Battery}
+			
+		\item \textbf{Quantum Tunneling Demo Written in Java} \newline
+		\null\qquad \url{https://github.com/jaymz07/quantum-tunneling}
+		
+		\item \textbf{Gaussian Beam Simulator GUI} \newline
+		\null\qquad \url{https://github.com/jaymz07/Gaussian-Beam-Sim-Qt}
+		
+		\item \textbf{Grotrian Diagram Generator} \newline
+		\null\qquad \url{https://github.com/jaymz07/Grotrian}
+	\end{itemize}
+	
+	\section*{TECHNICAL SKILLS}
+	\subsection*{Programming}
+	Python, Java, C, Cython, Verilog, C++, MATLAB, Octave, Mathematica, LabVIEW, Bash, PHP, git, network proficiency
+	
+	\subsection*{Scientific Computing}
+	NumPy, SciPy, PyTorch, Numba, openCV, Scikit-learn, Pandas, Slurm
+	
+	\subsection*{Scientific Visualization}
+	Matplotlib, Datashader, HoloViews, GNUPlot, Blender, PyVista, OpenGL, Origin, LaTeX
+	
+	\subsection*{Instrumentation \& Data Acquisition}
+	Communication protocol proficiency (GPIB, RS232, USB, Ethernet, SPI, I$^2$C), Instrument Automation (PyVISA, FPGA), GUI Design (QT, Tkinter, LabView)
+	
+	\subsection*{Optics and Photonics}
+	Laser alignment, optical fiber splicing, cavity-enhanced absorption spectroscopy, optical frequency combs, fiber optics, interferometry, precision wavelength metrology, optical frequency metrology, Fourier-transform spectroscopy, dual-comb spectroscopy, multi-pass cells
+	
+	\subsection*{Electronics}
+	Analog, digital, and mixed circuit design/simulation, PCB design, soldering, microcontrollers, FPGA,
+	signal conditioning, power supply design, amplifier design, filter design, photodetector optimization, vector network analysis, PID controllers, ADC/DAC systems, embedded systems, single-board computers
+	
+	\subsection*{Mechanical}
+	CAD, precision machining (vertical mill and precision lathe), 3D printing, vacuum systems
+	
+	\subsection*{Operating Systems}
+	Linux (Debian, Ubuntu, MX Linux, openSUSE, Fedora, CentOS, Arch), Windows
+	
+	\subsection*{Software Proficiency}
+	Server configuration (openSSH, Apache, PHP, X11), 3D modeling (Autodesk Inventor, Blender, pyvista, OpenGL), Electronic circuit simulation (National Instruments Multisim, QUCS), PCB Design (KiCAD), Terminal Proficiency (Bash, zsh, vim, tmux), Image Editing (Adobe Photoshop, GIMP, Inkscape), Audio editing (Audacity, Ableton, FL Studio), presentation (LibreOffice Impress, Microsoft Powerpoint), spreadsheet (LibreOffice Calc, Microsoft Excel), \LaTeX\;(this document), Web Page Design, git, Microsoft Word
+	
+\end{document}
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+
