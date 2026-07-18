@@ -10,7 +10,9 @@ This repository contains the LaTeX source for my academic curriculum vitae.
 
 Compile with
 
-```latexmk -pdf CV.tex```
+```
+latexmk -pdf CV.tex
+```
 
 or
 
