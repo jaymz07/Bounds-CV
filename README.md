@@ -4,7 +4,7 @@ This repository contains the LaTeX source for my academic curriculum vitae.
 
 ## View the CV
 
-[📄 View My CV](https://raw.githubusercontent.com/jamesbounds/cv/main/BOUNDS%20-%20CV.pdf)
+[📄 View My CV](https://raw.githubusercontent.com/jaymz07/Bounds-CV/main/BOUNDS%20-%20CV.pdf)
 
 ## Building
 
