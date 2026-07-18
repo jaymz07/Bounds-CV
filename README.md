@@ -2,6 +2,10 @@
 
 This repository contains the LaTeX source for my academic curriculum vitae.
 
+## View the CV
+
+[Bounds CV](./BOUNDS - CV.pdf)
+
 ## Building
 
 Compile with
