@@ -5,7 +5,7 @@
 % Packages
 \usepackage[utf8]{inputenc} % For input encoding
 \usepackage{geometry} % For page margins
-\geometry{a4paper, margin=1in} % Set paper size and margins
+\geometry{a4paper, margin=0.6in} % Set paper size and margins
 \usepackage{titlesec} % For section title formatting
 \usepackage{enumitem} % For itemized list formatting
 \usepackage{hyperref} % For hyperlinks
@@ -208,7 +208,7 @@ eprint=false
 	
 	% Header
 	\begin{center}
-		{\LARGE\bfseries James R. Bounds}
+		{\LARGE\bfseries James R. Bounds, PhD}
 		
 		\vspace{3pt}
 		
@@ -216,12 +216,14 @@ eprint=false
 		
 		\vspace{4pt}
 		
-		College Station, Texas \quad$\cdot$\quad
-		\href{mailto:jamesbounds@tamu.edu}{jamesbounds@tamu.edu} % | \href{https://www.linkedin.com/in/loremipsum}{Website or LinkedIn} % Contact info
+		Austin, Texas \quad$\cdot$\quad
+		\href{mailto:jamesbounds@tamu.edu}{jamesbounds07@gmail.com} % | \href{https://www.linkedin.com/in/loremipsum}{Website or LinkedIn} % Contact info
 	\end{center}
 	
+	\section*{EXECUTIVE SUMMARY}
+	Experimental Physicist (PhD) and Hardware/Software Engineer with 10+ years of experience designing precision optical instruments, custom analog electronics, and scientific automation software. Expert in laser spectroscopy, frequency combs, and high-performance numerical computing.
+	
 	%------------------------
-	% Education and Employment Section
 	\section*{EDUCATION \& EMPLOYMENT HISTORY}
 	\ccventryy%y
 	{2015}
@@ -237,7 +239,7 @@ eprint=false
 	{Advisor: Prof. Hans Schuessler}
 	
 	\ccventryy
-	{2016}
+	{2015-2016}
 	{IT Technician}
 	{Systek Computing}
 	{College Station, Texas}
@@ -249,24 +251,79 @@ eprint=false
 	{Advisor: Prof. Hans Schuessler}
 	
 	\ccventryy
+	{2016-2025}
+	{Visiting Scientist (Summer terms)}
+	{Max Planck Institute of Quantum Optics}
+	{Supervisor: Prof. Thomas Udem}
+	
+	\ccventryy
 	{2025--2026}
 	{Graduate Teaching Assistant}
 	{Texas A\&M University}
 	{Advisor: Prof. Hans Schuessler, Prof. Alexei Sokolov}
 	
+	\ccventryy
+	{2026}
+	{PhD. Physics}
+	{Texas A\&M University}
+	{Advisor: Prof. Alexei Sokolov}
+	
 	\section*{RESEARCH EXPERIENCE}
 	\begin{itemize}
-		\item Design and construction of high precision scientific instruments
-		\item Precision laser spectroscopy and cavity-enhanced absorption techniques
-		\item Characterization of breath samples using laser spectroscopy
-		\item High-resolution measurement of molecular absorption cross section
-		\item Retrieval of hyperfine constants from doppler-free spectra
-		\item Demonstration of novel wavelength and optical frequency calibration techniques
-		\item Optical system design and alignment (CRDS, Vernier spectroscopy, interferometry)
-		\item Scientific instrument design (high precision spectrometers and wavemeters, novel measurement platforms)
-		\item Scientific software development (full-stack, numerical optimization, instrument automation, GUI design)
-		\item Electronics and instrumentation (DAQ systems, photodetectors, control electronics)
-		\item Experimental characterization, uncertainty analysis, and validation against molecular databases
+		\item \textbf{Designed, assembled, and aligned high-precision optical setups:} \newline
+		Including Cavity Ring-down Spectroscopy (CRDS), Vernier spectroscopy, and Doppler-free saturated absorption systems. These systems achieved sub-ppb sensitivity in trace-gas detection.
+		
+		\item \textbf{Theoretical modeling and optimization of complex optical systems:} \newline
+		Built Gaussian beam simulation framework and custom ray/wave propagation tools in Python and C to validate beam geometry and cavity coupling efficiency.
+		
+		\item \textbf{Engineered custom optoelectronic and RF detection hardware:} \newline
+		Full life-cycle development of custom high-bandwidth amplified photodetectors, analog signal conditioning circuits, and mixed digital/analog devices for the optimization of experimental signals. This development spans the conception, schematic, KiCAD PCB layout, assembly, and enclosure design.
+		
+		\item \textbf{Calibrated and characterized mid-IR and near-IR laser systems:} \newline
+		Used optical frequency combs, custom-built wavemeters and interferometers for ultra-high-resolution wavelength metrology, optical frequency metrology, and hyperfine structure determinations.
+		
+		\item \textbf{Developed full-stack laboratory automation and data acquisition (DAQ) software:} \newline
+		Development spans from hardware-level FPGA fabric design for accelerated real-time processing, OS-level drivers written in C, to the high level interface written in Python and QT.
+		
+		\item \textbf{Constructed precision optomechanical assemblies and vacuum interface systems:} \newline
+		utilizing CAD software (Autodesk Inventor), 3D printing, and hands-on lathe/milling fabrication to ensure structural stability and low thermal drift of optical and vacuum-compatible mounts.
+		
+		\item \textbf{Executed optical fiber characterization and assembly:}
+		\newline
+		including single-mode and polarization-maintaining fiber splicing, free-space-to-fiber coupling, and loss minimization across visible and mid-IR wavelengths.
+		
+		\item \textbf{Led end-to-end experimental error analysis and validation:} \newline
+		Processing raw spectral measurements against line-list databases (eg. HITRAN) using custom non-linear fitting and numerical optimization algorithms, in addition to error quantification.
+		
+		\item \textbf{Collaborated across international research divisions:} \newline
+		(including Max Planck Institute of Quantum Optics), delivering hardware prototypes and presentation deliverables on tight timelines.
+		
+	\end{itemize}
+	
+%	\section*{RESEARCH EXPERIENCE}
+%	\begin{itemize}
+%		\item Design and construction of high precision scientific instruments
+%		\item Conception of novel data analysis algorithms
+%		\item Implementation of laser spectroscopy and cavity-enhanced absorption techniques
+%		\item Characterization of breath samples using laser spectroscopy
+%		\item High-resolution measurement of molecular absorption cross section
+%		\item Retrieval of hyperfine constants from doppler-free spectra
+%		\item Demonstration of novel wavelength and optical frequency calibration techniques
+%		\item Optical system design and alignment (CRDS, Vernier spectroscopy, interferometry)
+%		\item Scientific instrument design (high precision spectrometers and wavemeters, novel measurement platforms)
+%		\item Scientific software development (full-stack, numerical optimization, instrument automation, GUI design)
+%		\item Electronics and instrumentation (DAQ systems, photodetectors, control electronics)
+%		\item Experimental characterization, uncertainty analysis, and validation against molecular databases
+%	\end{itemize}
+
+	\section*{PROJECTS AND HARDWARE SYSTEMS}
+	\begin{itemize}
+		\item \textbf{Optical Breath Analysis Platforms:} Complete design, fabrication, assembly and alignment of both cavity-ringdown spectrometers and Vernier spectrometers. Both systems are easily capable of sub-1ppb trace gas detection in human breath samples.
+		
+		\item \textbf{Wavelength Metrology Platform:} Construction of a real-time wavelength analysis instrument capable of precision of less than 1 part in $10^8$, aided by two complementary algorithms invented in my dissertation for the analysis of instrument data.
+		
+		\item \textbf{Ultra-high precision IR spectrometer:} Conception, design, and implementation of a saturated absorption spectrometer with on-board optical frequency calibration using a comb. This was used to measure the hyperfine spectrum of metastable xenon with accuracy competitive with much more complex systems.
+		
 	\end{itemize}
 	
 	%------------------------
@@ -377,33 +434,22 @@ eprint=false
 	\end{itemize}
 	
 	\section*{TECHNICAL SKILLS}
-	\subsection*{Programming}
-	Python, Java, C, Cython, Verilog, C++, MATLAB, Octave, Mathematica, LabVIEW, Bash, PHP, git, network proficiency
 	
-	\subsection*{Scientific Computing}
-	NumPy, SciPy, PyTorch, Numba, openCV, Scikit-learn, Pandas, Slurm
-	
-	\subsection*{Scientific Visualization}
-	Matplotlib, Datashader, HoloViews, GNUPlot, Blender, PyVista, OpenGL, Origin, LaTeX
-	
-	\subsection*{Instrumentation \& Data Acquisition}
-	Communication protocol proficiency (GPIB, RS232, USB, Ethernet, SPI, I$^2$C), Instrument Automation (PyVISA, FPGA), GUI Design (QT, Tkinter, LabView)
-	
-	\subsection*{Optics and Photonics}
-	Laser alignment, optical fiber splicing, cavity-enhanced absorption spectroscopy, optical frequency combs, fiber optics, interferometry, precision wavelength metrology, optical frequency metrology, Fourier-transform spectroscopy, dual-comb spectroscopy, multi-pass cells
-	
-	\subsection*{Electronics}
-	Analog, digital, and mixed circuit design/simulation, PCB design, soldering, microcontrollers, FPGA,
-	signal conditioning, power supply design, amplifier design, filter design, photodetector optimization, vector network analysis, PID controllers, ADC/DAC systems, embedded systems, single-board computers
-	
-	\subsection*{Mechanical}
-	CAD, precision machining (vertical mill and precision lathe), 3D printing, vacuum systems
-	
-	\subsection*{Operating Systems}
-	Linux (Debian, Ubuntu, MX Linux, openSUSE, Fedora, CentOS, Arch), Windows
-	
-	\subsection*{Software Proficiency}
-	Server configuration (openSSH, Apache, PHP, X11), 3D modeling (Autodesk Inventor, Blender, pyvista, OpenGL), Electronic circuit simulation (National Instruments Multisim, QUCS), PCB Design (KiCAD), Terminal Proficiency (Bash, zsh, vim, tmux), Image Editing (Adobe Photoshop, GIMP, Inkscape), Audio editing (Audacity, Ableton, FL Studio), presentation (LibreOffice Impress, Microsoft Powerpoint), spreadsheet (LibreOffice Calc, Microsoft Excel), \LaTeX\;(this document), Web Page Design, git, Microsoft Word
+	\begin{description}[font=\bfseries, leftmargin=0pt, labelsep=0.5em, itemsep=0.4em]
+		\item[Optics \& Photonics:] Precision Free-Space Alignment, Optical Frequency Combs, Cavity-Enhanced Spectroscopy (CRDS, Vernier), Dual-Comb Spectroscopy, Optical Fiber Splicing \& Coupling, Interferometry, Wavelength Metrology, Multi-Pass Cells, Vacuum Optical Interfaces.
+		
+		\item[Hardware, EDA \& Electronics:] Analog/Digital/Mixed-Circuit Design, Schematic Capture \& PCB Layout (KiCAD), Circuit Simulation (NI Multisim, QUCS), FPGA Fabric Design (Verilog), Microcontrollers \& Embedded Systems, Photodetector Optimization, Signal Conditioning, PID Controllers, VNAs, Oscilloscopes.
+		
+		\item[Instrumentation \& DAQ:] Hardware Protocol Automation (GPIB, RS232, USB, Ethernet, SPI, $I^2C$, PyVISA), Custom DAQ Systems, FPGA Acceleration, GUI Development (Qt/PyQt, Tkinter, LabVIEW).
+		
+		\item[Programming Languages:] Python, C, C++, Cython, Verilog, MATLAB, Java, Bash, Shell Scripting, Git, \LaTeX.
+		
+		\item[Scientific Computing \& Modeling:] NumPy, SciPy, PyTorch, Numba, OpenCV, Scikit-learn, Pandas, Slurm HPC Cluster Management, Ray-Tracing \& Gaussian Beam Modeling.
+		
+		\item[Mechanical:] 3D and CAD Modeling (Autodesk Inventor, Blender, OpenGL, PyVista), Precision Machining (Vertical Mill, Precision Lathe), 3D Printing / Additive Manufacturing, Ultra-High Vacuum (UHV) Systems.
+		
+		\item[Systems \& Infrastructure:] Linux Systems Administration (openSUSE, Debian, Arch, Fedora, RHEL/CentOS), SSH Server Configuration, Network Infrastructure, X11 Forwarding.
+	\end{description}
 	
 \end{document}
 %-------------------------------------------------------------------------------
