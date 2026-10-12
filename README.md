@@ -6,6 +6,8 @@ This repository contains the LaTeX source for my academic curriculum vitae.
 
 [📄 View My CV](https://raw.githubusercontent.com/jaymz07/Bounds-CV/main/BOUNDS%20-%20CV.pdf)
 
+[📄 View My Résumé](https://raw.githubusercontent.com/jaymz07/Bounds-CV/main/BOUNDS%20-%20Resume.pdf)
+
 ## Building
 
 Compile with
