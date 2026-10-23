@@ -27,6 +27,12 @@
 	\textit{#3} \hfill \textit{#4}\\[0.2em]
 }
 
+% Custom entry command (compact, without trailing newline)
+\newcommand{\resumeentryC}[4]{
+	\noindent\textbf{#2} \hfill \textbf{#1}\\
+	\textit{#3} \hfill \textit{#4}
+}
+
 \begin{document}
 	\pagestyle{empty}
 	
@@ -40,7 +46,24 @@
 	
 	% Executive Summary
 	\section*{EXECUTIVE SUMMARY}
-	Experimental Physicist (PhD) and Hardware/Software Engineer with 10+ years of experience designing precision optical instruments, custom analog electronics, and scientific automation software. Expert in laser spectroscopy, frequency combs, precision metrology, and high-performance numerical computing.
+	Experimental Physicist (PhD) and Hardware/Software Engineer with 10+ years of experience designing precision optical instruments, custom analog electronics, and scientific automation software. Expert in laser spectroscopy, frequency combs, precision metrology, and high-performance numerical computing. Proven experience in moving from theoretical ideas to building cutting-edge optical measurement devices with record-setting performance.
+	
+	% Education
+	\section*{EDUCATION}
+	\resumeentry{2026}{PhD in Physics}{Texas A\&M University}{Advisor: Prof. Alexei Sokolov, Prof. Hans Schuessler}
+	\resumeentryC{2015}{B.S. in Physics}{Texas A\&M University}{Department of Physics and Astronomy}
+	
+	% Selected Publications & Presentations
+	\section*{SELECTED PUBLICATIONS \& PRESENTATIONS}
+	\textit{*Full list of 9 peer-reviewed journal papers, 6 conference proceedings, and 5 talks available upon request.}
+	\begin{itemize}[leftmargin=1.2em, itemsep=0.2em]
+		\item \textbf{Bounds, J.}, et al. "Acetone Absorption Cross-Section in the Near-Infrared of the Methyl Stretch Overtone and Application for Analysis of Human Breath." \textit{Optics} 6 (1), 2025.
+		\item \textbf{Bounds, J.}, et al. "Hyperfine structure and isotope shifts of xenon measured for near-infrared transitions with Doppler-free saturated absorption spectroscopy" \textit{Spectrochimica Acta Part B: Atomic Spectroscopy}, 202, 2023.
+		\item Ozawa, A., Davila-Rodriguez, J., \textbf{Bounds, J.}, et al. "Single ion fluorescence excited with a single mode of an UV frequency comb." \textit{Nature Communications} 8 (1), 2017.
+		\item Zhu, F., \textbf{Bounds, J.}, et al. "Near infrared frequency comb vernier spectrometer for broadband trace gas detection." \textit{Optics Express} 22 (19), 2014.
+		\item \textbf{Dissertation:} Toward a Compact Optical Breath Diagnostic Platform: Wavelength and Concentration Retrieval in Cavity-Enhanced Spectrometers with Reduced Calibration Dependence
+		\item \textbf{Conference Talk (2024):} "Frequency Comb Calibration of the Hyperfine Structure of Metastable Xenon," \textit{SIBOR Workshop}, Montgomery, TX.
+	\end{itemize}
 	
 	% Technical Skills
 	\section*{TECHNICAL SKILLS}
@@ -50,37 +73,41 @@
 		\item[Instrumentation \& DAQ:] Hardware Protocol Automation (GPIB, RS232, USB, Ethernet, SPI, $I^2C$, PyVISA), Custom DAQ Systems, FPGA Acceleration, GUI Development (Qt/PyQt, Tkinter, LabVIEW).
 		\item[Programming Languages:] Python, C, C++, Cython, Verilog, MATLAB, Java, Bash, Shell Scripting, Git, \LaTeX.
 		\item[Scientific Computing \& Modeling:] NumPy, SciPy, PyTorch, Numba, OpenCV, Scikit-learn, Pandas, Slurm HPC, Ray-Tracing \& Gaussian Beam Modeling.
-		\item[Mechanical \& CAD/CAM:] 3D CAD Modeling (Autodesk Inventor, Blender, PyVista), Precision Machining (Vertical Mill, Precision Lathe), 3D Printing, Ultra-High Vacuum (UHV) Systems.
+		\item[Mechanical \& CAD:] 3D CAD Modeling (Autodesk Inventor, Blender, PyVista), Precision Machining (Vertical Mill, Engine Lathe), 3D Printing, Ultra-High Vacuum (UHV) Systems.
 		\item[Systems \& Infrastructure:] Linux Administration (openSUSE, Debian, Arch, Fedora, RHEL), SSH, Networking, X11 Forwarding.
 	\end{description}
 	
 	% Experience
 	\section*{RESEARCH \& ENGINEERING EXPERIENCE}
 	
-	\resumeentry{2016 -- 2026}{Graduate Research Assistant / Teaching Assistant}{Texas A\&M University}{College Station, TX}
+	\resumeentryC{2016 -- 2026}{Graduate Research Assistant / Teaching Assistant}{Texas A\&M University}{College Station, TX}
 	\begin{itemize}[leftmargin=1.2em, itemsep=0.2em]
-		\item \textbf{Precision Optical Setup Design:} Engineered, assembled, and aligned complex free-space optical systems—including Cavity Ring-Down Spectroscopy (CRDS), Vernier spectroscopy, and Doppler-free saturated absorption setups—achieving sub-ppb sensitivity.
+		\item \textbf{Developed Optical Breath Analysis Platforms:} Using a combination of cutting-edge technologies, several spectroscopic platforms capable of human breath analysis were developed.
+		\item \textbf{Invention of Novel Data Analysis Methods:} Developed highly optimized fitting routines, including a new dynamic wavelength retrieval method and a spectroscopic inference method.
+		%\item \textbf{Precision Optical Setup Design:} Engineered, assembled, and aligned complex free-space optical systems, including: Cavity Ring-Down Spectroscopy (CRDS), Vernier spectroscopy, and Doppler-free saturated absorption setups, all achieving record-breaking measurement sensitivities.
 		\item \textbf{Laser Characterization \& Frequency Metrology:} Calibrated and characterized mid-IR and near-IR laser sources using optical frequency combs, custom wavemeters, and interferometers to measure hyperfine spectra with sub-MHz precision.
-		\item \textbf{Optical \& Beam Simulation:} Developed custom Gaussian beam and ray-tracing simulation GUIs in Python and C to model beam propagation, mode matching, and cavity coupling efficiency.
+		%\item \textbf{Optical \& Beam Simulation:} Developed custom Gaussian beam and ray-tracing simulation GUIs in Python and C to model beam propagation, mode matching, and cavity coupling efficiency.
 		\item \textbf{Optoelectronics \& PCB Engineering:} Executed full life-cycle development of low-noise, high-bandwidth photodetectors and signal-conditioning electronics from schematic capture to KiCAD PCB layout, fabrication, and testing.
-		\item \textbf{Instrument Automation \& DAQ Stack:} Architected full-stack automation pipelines in Python (PyVISA, PyQt) and C, integrating FPGA fabric design for real-time data acquisition and high-speed processing.
+		\item \textbf{Instrument Automation \& DAQ Engineering:} Architected full-stack data acquisition pipelines in Python and C, integrating FPGA fabric design for real-time operation and high-speed processing.
 		\item \textbf{Optomechanics \& Fabrication:} Designed custom mounts and vacuum interface enclosures using CAD (Autodesk Inventor), 3D printing, and hands-on precision machining (lathe/milling).
 		\item \textbf{Fiber Optics \& Assembly:} Handled optical fiber preparation, fusion splicing (single-mode and PM fiber), and free-space-to-fiber coupling with loss minimization across visible and mid-IR wavelengths.
-		\item \textbf{Error Quantification \& Optimization:} Developed non-linear fitting algorithms and numerical optimization routines to validate raw spectral data against molecular databases (e.g., HITRAN).
+		%\item \textbf{Error Quantification \& Optimization:} 
 	\end{itemize}
 	
 	\vspace{0.3em}
-	\resumeentry{2016 -- 2025}{Visiting Scientist (Summer Terms)}{Max Planck Institute of Quantum Optics}{Garching, Germany}
+	\resumeentryC{2016 -- 2025}{Visiting Scientist (Summer Terms)}{Max Planck Institute of Quantum Optics}{Garching, Germany}
 	\begin{itemize}[leftmargin=1.2em, itemsep=0.2em]
-		\item Collaborated with international teams under Prof. Thomas Udem on frequency comb metrology and spectroscopy.
-		\item Developed and tested hardware prototypes and presented findings on tight project timelines.
+		\item \textbf{Laser Source Engineering:} Development and assembly of both CW and frequency comb laser sources for ultra-precise spectroscopy and metrology.
+		\item \textbf{Vacuum Ultra-Violet Spectroscopy:} Implementation of a self-contained vacuum ultra-violet spectrometer for use in characterization of attosecond pulses formed by high-harmonic generation.
+		\item \textbf{Molecular Dynamics Simulation:} Development of an in-house simulation of molecular dynamics inside of an RF-quadrupole trap for the optimization of measurement signals.
+		\item \textbf{International Collaboration:} Collaborated with international team under Prof. Thomas Udem on the frequency comb metrology and spectroscopy of singly ionized helium ions confined using an RF quadrupole trap.
 	\end{itemize}
 	
 	\vspace{0.3em}
-	\resumeentry{2015 -- 2016}{IT Technician}{Systek Computing}{College Station, TX}
+	\resumeentryC{2015 -- 2016}{IT Technician}{Systek Computing}{College Station, TX}
 	\begin{itemize}[leftmargin=1.2em, itemsep=0.2em]
-		\item Configured Linux and Windows server environments, network infrastructure, and system diagnostics.
-		\item Both in-store and on-site customer service.
+		\item \textbf{Server Configuration:} Configured Linux and Windows server environments, network infrastructure, and system diagnostics.
+		\item \textbf{Repair and Diagnostics:} Troubleshooted and repaired consumer devices as well as on-site business infrastructure.
 	\end{itemize}
 	
 	% Projects & Hardware Systems
@@ -88,28 +115,12 @@
 	\begin{itemize}[leftmargin=1.2em, itemsep=0.3em]
 		\item \textbf{Optical Breath Analysis Platforms:} Designed and aligned CRDS and Vernier spectrometers capable of sub-1ppb trace gas detection in human breath samples.
 		\item \textbf{Wavelength Metrology Platform:} Built a real-time wavelength analysis instrument achieving precision $< 10^{-8}$ using novel data processing algorithms.
-		\item \textbf{Precision IR Spectrometer:} Designed and implemented a saturated absorption spectrometer with frequency comb calibration to measure metastable xenon hyperfine structures.
+		\item \textbf{Precision IR Spectrometer:} Designed and implemented a saturated absorption spectrometer with frequency comb calibration capable of measuring hyperfine parameters with record precision.
 		\item \textbf{Open Source Hardware/Software Projects:} 
 		\begin{itemize}[leftmargin=1em, itemsep=0.1em]
 			\item \textbf{Battery-Powered Amplified Photodetector:} Low-noise PCB optoelectronic design (\href{https://github.com/jaymz07/Photodetector-Battery}{GitHub}).
 			\item \textbf{Gaussian Beam Simulator GUI:} Qt/Python optics simulation tool (\href{https://github.com/jaymz07/Gaussian-Beam-Sim-Qt}{GitHub}).
 		\end{itemize}
-	\end{itemize}
-	
-	% Education
-	\section*{EDUCATION}
-	\resumeentry{2026}{PhD in Physics}{Texas A\&M University}{Advisor: Prof. Alexei Sokolov}
-	\resumeentry{2015}{B.S. in Physics}{Texas A\&M University}{Department of Physics and Astronomy}
-	
-	% Selected Publications & Presentations
-	\section*{SELECTED PUBLICATIONS \& PRESENTATIONS}
-	\textit{*Full list of 9 peer-reviewed journal papers, 6 conference proceedings, and 5 talks available upon request.}
-	\begin{itemize}[leftmargin=1.2em, itemsep=0.2em]
-		\item \textbf{Bounds, J.}, et al. "Acetone Absorption Cross-Section in the Near-Infrared of the Methyl Stretch Overtone and Application for Analysis of Human Breath." \textit{Optics} 6 (1), 2025.
-		\item \textbf{Bounds, J.}, et al. "Hyperfine structure and isotope shifts of xenon measured for near-infrared transitions with Doppler-free saturated absorption spectroscopy" \textit{Spectrochimica Acta Part B: Atomic Spectroscopy}, 202, 2023.
-		\item Ozawa, A., Davila-Rodriguez, J., \textbf{Bounds, J. R.}, et al. "Single ion fluorescence excited with a single mode of an UV frequency comb." \textit{Nature Communications} 8 (1), 2017.
-		\item Zhu, F., \textbf{Bounds, J.}, et al. "Near infrared frequency comb vernier spectrometer for broadband trace gas detection." \textit{Optics Express} 22 (19), 2014.
-		\item \textbf{Conference Talk (2024):} "Frequency Comb Calibration of the Hyperfine Structure of Metastable Xenon," \textit{SIBOR Workshop}, Montgomery, TX.
 	\end{itemize}
 	
 \end{document}
